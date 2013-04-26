@@ -137,6 +137,8 @@ L.Control.GeoSearch = L.Control.extend({
             $(this._map._container).focus();
         }
         else if (e.keyCode === enterKey) {
+            e.preventDefault();
+            e.stopPropagation();
             this.geosearch($('#leaflet-control-geosearch-qry').val());
         }
     }
